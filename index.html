@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Percentile Calculator</title>
+</head>
+
+<body>
+  <form id="main" action="index.html" method="post">
+    <label>Percentile: (upto 2 decimal places)</label>
+    <input type="number" id="yourPercentile" min="0" step=".01">
+    <br><br><br>
+    <label>Rank:</label>
+    <input type="number" id="yourRank"><br><br><br>
+    <button onclick="percentileCalc()"> Calculate</button>
+  </form>
+
+
+  <script>
+  function percentileCalc(){
+  var i= document.getElementById("yourPercentile").value;
+  var rank= document.getElementById("yourRank").value;
+  i= (100-i);
+  var totalNumberOfStudents= (rank*100)/i;
+  totalNumberOfStudents= Math.round(totalNumberOfStudents);
+  alert("Total Number of Students who gave the mock are "+totalNumberOfStudents);
+  }
+  </script>
+
+
+</body>
+
+</html>
